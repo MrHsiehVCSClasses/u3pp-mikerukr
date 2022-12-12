@@ -94,6 +94,7 @@ public class Blackjack {
     }
     //starts the game by gving the random hand
     private void startGame(){
+        System.out.println("Goodluck!");
         shouldShuffle();
         userHand[0] = myDeck.deal();
         userHand[1] = myDeck.deal();
@@ -217,7 +218,8 @@ public class Blackjack {
                         System.out.println("not y/n");
                     }   
                 }
-                else if (calcPoints(userHand) <= 21){
+                else if (calcPoints(userHand) <= 21)
+                {
                     System.out.println("would you like to hit or stay? (h/s)");
                     if (scanner.nextLine() .equals ("h")){
                         System.out.println("you chose to hit!");
@@ -239,11 +241,9 @@ public class Blackjack {
                             }
                         }
             else if (scanner.nextLine().equals("s")){
-                int count = 3;
                 while (shouldDealerKeepHitting(dealerHand) == true) {
                     shouldShuffle();
                     dealerHand[nullnum(dealerHand) + 1] = myDeck.deal();
-                    count +=1;
                     if (isBust(userHand) == true){
                         System.out.println("you busted!");
                         System.out.println("dealer wins!");
