@@ -238,70 +238,12 @@ public class Blackjack {
                                 System.out.println("not y/n");
                             }
                         }
-                        scanner.nextLine();
-                        if (isBust(userHand) == true){
-                            System.out.println("you busted.");
-                            System.out.println("dealer wins!");
-                            determineResult(userHand, dealerHand);
-                            System.out.println("play again? (y/n)");
-                            if (scanner.nextLine().equals("y")){
-                                reset();
-                                play(scanner);
-                            }
-                            else if (scanner.nextLine().equals("n")){
-                                System.out.println("ggs!");
-                            }
-                            else {
-                                System.out.println("not y/n");
-                            }   
-                        }
-                    }
-                    else if (scanner.nextLine().equals("s")){
-                        int num = 3;
-                        while (shouldDealerKeepHitting(dealerHand) == true) {
-                            shouldShuffle();
-                            dealerHand[nullnum(dealerHand) + 1] = myDeck.deal();
-                            num +=1;
-                            if (isBust(userHand) == true){
-                                System.out.println("you busted!");
-                                System.out.println("dealer wins!");
-                                determineResult(userHand, dealerHand);
-                                System.out.println("play again? (y/n)");
-                                if (scanner.nextLine().equals("y")){
-                                    reset();
-                                    play(scanner);
-                                }
-                                else if (scanner.nextLine().equals("n")){
-                                    System.out.println("ggs!");
-                                }
-                                else {
-                                    System.out.println("not y/n");
-                                }
-                            }
-                        }
-                        printNumInHand(userHand, dealerHand);
-                        scanner.nextLine();
-                        System.out.println(determineResult(userHand, dealerHand));
-                        System.out.println("play again? (y/n)");
-                        if (scanner.nextLine().equals("y")){
-                            reset();
-                            play(scanner);
-                        }
-                        else if (scanner.nextLine().equals("n")){
-                            System.out.println("ggs!");
-                        }
-                        else {
-                            System.out.println("not y/n");
-                        }
-                    }
-                }
-            }
             else if (scanner.nextLine().equals("s")){
-                int num = 3;
+                int count = 3;
                 while (shouldDealerKeepHitting(dealerHand) == true) {
                     shouldShuffle();
                     dealerHand[nullnum(dealerHand) + 1] = myDeck.deal();
-                    num +=1;
+                    count +=1;
                     if (isBust(userHand) == true){
                         System.out.println("you busted!");
                         System.out.println("dealer wins!");
@@ -336,4 +278,6 @@ public class Blackjack {
         }
     }
 }
-
+}
+}
+}
